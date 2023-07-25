@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: webapp
+    image: nginx-demo-app
+    build:
+      context: ./app
+    networks:
+      - my_network
+    ports:
+      - "5001:80"
+
+networks:
+  my_network:
